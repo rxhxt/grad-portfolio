@@ -9,3 +9,12 @@ export function load({ params }: { params: Record<string, string> }) {
 		return { project };
 	}
 }
+
+
+// <CardLogo
+// 									src={getAssetURL(item.logo)}
+// 									alt={item.name}
+// 									radius={'0px'}
+// 									size={15}
+// 									classes="mr-2"
+// 								/>

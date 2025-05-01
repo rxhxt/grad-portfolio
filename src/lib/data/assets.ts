@@ -70,7 +70,21 @@ const Assets = {
 	Jest: a('jest.png'),
 	Unocss: a('unocss.svg'),
 	Ruvy: a('ruvy.svg'),
-	Postcss: a('postcss.svg')
+	Postcss: a('postcss.svg'),
+	NextJs: a('nodejs.png'),
+    MachineLearning: a('ml.png'), // Or a more generic icon
+    ArtificialIntelligence: a('ai.jpeg'), // Or a more generic icon
+    DataScience: a('ds-removebg-preview.png'), // Or a more generic icon
+    ComputerVision: a('cv-removebg-preview.png'), // Or a more generic icon
+    SQL: a('sql.jpeg'),
+    VSCode: a('vscode.jpeg'),
+    Github: a('github.png'),
+    Figma: a('figma.svg'),
+	Tableau: a('tableau.png'),
+	Postman: a('postman.png'),
+	Materialize: a('materialize.png'),
+	ElasticSearch: a('es.png'),
+	LLM: a('llm.png'),
 };
 
 export default Assets;

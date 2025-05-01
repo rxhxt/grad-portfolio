@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { getAssetURL } from '$lib/data/assets';
 	import { title } from '@data/projects';
 
 	import type { Project } from '$lib/types';
 
-	import CardLogo from '$lib/components/Card/CardLogo.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
 	import Markdown from '$lib/components/Markdown.svelte';
 	import TabTitle from '$lib/components/TabTitle.svelte';
@@ -39,7 +37,7 @@
 		</div>
 	{:else}
 		<div class="flex flex-col items-center overflow-x-hidden">
-			<Banner img={getAssetURL(data.project.logo)}>
+			<Banner>
 				<div class="col-center p-y-20">
 					<div class="text-0.9em">
 						<MainTitle>{data.project.name}</MainTitle>
@@ -64,13 +62,7 @@
 								classes="inline-flex flex-row items-center justify-center"
 								href={`${base}/skills/${item.slug}`}
 							>
-								<CardLogo
-									src={getAssetURL(item.logo)}
-									alt={item.name}
-									radius={'0px'}
-									size={15}
-									classes="mr-2"
-								/>
+								
 								<span class="text-[0.9em]">{item.name}</span>
 							</Chip>
 						{/each}

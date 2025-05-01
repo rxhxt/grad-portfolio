@@ -3,64 +3,157 @@ import { getSkills } from './skills';
 import type { Project } from '../types';
 
 export const items: Array<Project> = [
-	{
-		slug: 'slick-portfolio-angular',
-		color: '#5e95e3',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non dolores voluptatibus vitae praesentium aperiam, iure laboriosam repellendus sunt explicabo pariatur totam enim, nihil animi quisquam. Sit vero quod laborum!',
-		shortDescription:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non dolores voluptatibus vitae praesentium aperiam, iure laboriosam repellendus sunt explicabo pariatur totam enim, nihil animi quisquam. Sit vero quod laborum!',
-		links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
-		logo: Assets.Unknown,
-		name: 'Slick Portfolio',
-		period: {
-			from: new Date()
-		},
-		skills: getSkills('angular', 'ts', 'tailwind'),
-		type: 'Website Template'
-	},
-	{
-		slug: 'slick-portfolio-svelte',
-		color: '#ff3e00',
-		description:
-			'A Vercel-like developer portfolio website template made with Typescript and SvelteKit.',
-		shortDescription:
-			'A Vercel-like developer portfolio website template made with Typescript and SvelteKit.',
-		links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
-		logo: Assets.Svelte,
-		name: 'Slick Portfolio',
-		period: {
-			from: new Date()
-		},
-		skills: getSkills('svelte', 'ts', 'tailwind', 'sass'),
-		type: 'Website Template',
-		screenshots: [
-			{
-				label: 'screen 1',
-				src: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '2',
-				src: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '3',
-				src: 'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '4',
-				src: 'https://images.unsplash.com/photo-1542903660-eedba2cda473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '5',
-				src: 'https://images.unsplash.com/photo-1619410283995-43d9134e7656?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-			},
-			{
-				label: '6',
-				src: 'https://images.unsplash.com/photo-1585079542156-2755d9c8a094?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'
-			}
-		]
-	}
-];
+    {
+        slug: 'dvpo-automation',
+        color: '#AA0000',
+        description: 'Collaborated with Family Law Center to develop an LLM-powered writing assistant aimed at supporting survivors of domestic violence in drafting emotionally sensitive and legally sound protection order petitions. The tool generates personalized feedback questions to help survivors provide clearer, more detailed narratives, significantly reducing the time law students spend on follow-up interviews.',
+        shortDescription: 'LLM-powered writing assistant for domestic violence protection order petitions',
+        links: [{ to: "https://github.com/rxhxt/CPSC-5830-Team-4", label: "GitHub" }],
+        logo: Assets.Unknown,
+        name: 'DVPO Drafting Automation',
+        period: {
+            from: new Date('2025-01'),
+            to: new Date('2025-03')
+        },
+        skills: getSkills('python', 'llm'), // Assuming you used Python to build the LLM integration
+        type: 'AI Application'
+    },
+    {
+        slug: 'documentor',
+        color: '#61DAFB',
+        description: 'Intelligent learning tool designed to help students better understand and retain concepts from PDF documents. Built with Generative AI (GenAI), React, and Flask, the tool enhances learning by generating explanations, FAQs, and up to 50 unique, customized questions for every uploaded document.',
+        shortDescription: 'AI-powered PDF learning assistant built with React and Flask',
+        links: [{ to: "https://github.com/rxhxt/ai-pdf-assist.git", label: "GitHub" }],
+        logo: Assets.Unknown,
+        name: 'DocuMentor',
+        period: {
+            from: new Date('2024-11'),
+            to: new Date('2025-01')
+        },
+        skills: getSkills('reactjs', 'python', 'flask'),
+        type: 'Web Application'
+    },
+    {
+        slug: 'netflix-analysis',
+        color: '#E50914',
+        description: 'Created a dashboard which gives geographical and annual distribution of TV shows and movies. This dashboard is an effective way to play around and extract insights which will help in global marketing',
+        shortDescription: 'Data analysis dashboard for Netflix content distribution',
+        links: [{ to: "https://public.tableau.com/views/NetflixDataAnalysis_17210824390090/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link", label: "Tableau" }],
+        logo: Assets.Unknown,
+        name: 'Netflix Data Analysis',
+        period: {
+            from: new Date('2024-05'),
+            to: new Date('2024-06')
+        },
+        skills: getSkills('python', 'data-science', 'tableau'), // Assuming 'data-science' encompasses 'data-analytics'
+        type: 'Data Analysis'
+    },
+    {
+        slug: 'quantum-rl',
+        color: '#000000',
+        description: 'Developed a Quantum Deep Reinforcement Learning model by integrating Quantum feed-forward layers into a Deep Reinforcement Learning setup. Trained using Deep Q-learning, it demonstrated superior performance compared to classical Deep Q-Network models in zero-sum games such as Tic-Tac-Toe.',
+        shortDescription: 'Quantum reinforcement learning for zero-sum games',
+        links: [{ to: "https://github.com/rxhxt/Quantum-Deep-Reinforcement-Learning-on-Tic-Tac-Toe.git", label: "GitHub" }], // Assuming you have a GitHub link for this project
+        logo: Assets.Unknown,
+        name: 'Quantum RL for Zero-Sum Games',
+        period: {
+            from: new Date('2020-08'),
+            to: new Date('2021-05')
+        },
+        skills: getSkills('python', 'machine-learning'), // 'quantum-computing' is not in your defined skills
+        type: 'Research Project'
+    },
+    {
+        slug: 'emotion-recognition',
+        color: '#4B8BF4',
+        description: 'Implemented a custom Convolutional Neural Net model which is trained on the fer2013 challenge dataset, incorporating data augmentation techniques for enhanced model robustness and performance. Developed a model capable of analyzing real-time webcam feeds to accurately identify users\' emotions, with the ability to detect up to seven different emotional states.',
+        shortDescription: 'Real-time emotion detection using CNN',
+        links: [],
+        logo: Assets.Unknown,
+        name: 'Real Time Emotion Recognition',
+        period: {
+            from: new Date('2019-07'),
+            to: new Date('2019-09')
+        },
+        skills: getSkills('python', 'machine-learning', 'computer-vision'),
+        type: 'AI/ML Project'
+    },
+    {
+        slug: 'mamoo',
+        color: '#FF6B6B',
+        description: 'Assisted to develop Mamoo, an event organizer app that helps users plan events smoothly by connecting them with vendors and offering tools for easier management. It simplifies event planning for both users and vendors alike.',
+        shortDescription: 'Event planning and vendor management application',
+        links: [],
+        logo: Assets.Unknown,
+        name: 'Mamoo',
+        period: {
+            from: new Date('2024-01'),
+            to: new Date('2024-03')
+        },
+        skills: getSkills('reactjs','aws','javascript','typescript','nodejs'), // Assuming 'javascript' and 'typescript' are used for the frontend and backend respectively
+        type: 'Web Application'
+    },
+    {
+        slug: 'sugarscape',
+        color: '#4A90E2',
+        description: 'The project aims to improve Sugarscape simulation efficiency using TaskVine on HTCondor, allowing concurrent execution of multiple simulations to study societal dynamics. Scaling on distributed platforms like OSG seeks to accelerate analysis, optimize resource utilization, and enhance data management.',
+        shortDescription: 'Distributed computing simulation for social dynamics',
+        links: [],
+        logo: Assets.Unknown,
+        name: 'Running SugerScape on TaskVine',
+        period: {
+            from: new Date('2024-01'),
+            to: new Date('2024-03')
+        },
+        skills: getSkills('python'), // 'distributed-computing' is not in your defined skills
+        type: 'Research Project'
+    },
+    {
+        slug: 'spotify-analysis',
+        color: '#1DB954',
+        description: 'Collaborated with a team to create a strong process for cleaning and analyzing Spotify song data. Utilized statistical methods and machine learning to predict song popularity with 80% accuracy, showing the importance of selecting the right features and fine-tuning models.',
+        shortDescription: 'ML-based Spotify song popularity prediction',
+        links: [{to:"https://github.com/rxhxt/Spotify-Hits-Prediction-and-Classification.git",label:"GitHub"}], // Assuming you have a GitHub link for this project
+        logo: Assets.Unknown,
+        name: 'Spotify Hits Analysis',
+        period: {
+            from: new Date('2024-01'),
+            to: new Date('2024-03')
+        },
+        skills: getSkills('python', 'machine-learning', 'data-science'), // Assuming 'data-science' encompasses 'data-analytics'
+        type: 'Data Analysis'
+    },
+    {
+        slug: 'heart-attack',
+        color: '#E74C3C',
+        description: 'Conducted exploratory data analysis to identify significant health and demographic factors, which improved the audience\'s understanding. Developed predictive models like Logistic Regression, K-Nearest Neighbors, and Support Vector Classifier, achieving 94% precision and an recall of 0.93 for heart disease risk prediction using KNN.',
+        shortDescription: 'ML models for heart disease prediction',
+        links: [{ to: "https://github.com/rxhxt/Heart-Disease-Indicator.git", label: "GitHub" }], // Assuming you have a GitHub link for this project
+        logo: Assets.Unknown,
+        name: 'Heart Attack Classification',
+        period: {
+            from: new Date('2023-09'),
+            to: new Date('2023-12')
+        },
+        skills: getSkills('python', 'machine-learning', 'data-science'), // Assuming 'data-science' encompasses 'data-analytics'
+        type: 'ML Project'
+    },
+    {
+        slug: 'ssi-faang',
+        color: '#3498DB',
+        description: 'Spearheaded SSi-FAANG, a tool to get daily social sentiment details for FAANG Companies to get insights and make trading decisions. Developed the website and performed regular updates and bug fixes.',
+        shortDescription: 'Social sentiment analysis tool for FAANG stocks',
+        links: [{to:"https://faang.finsoftai.com",label:"Website"}], // Assuming you have a GitHub link for this project
+        logo: Assets.Unknown,
+        name: 'SSi - FAANG',
+        period: {
+            from: new Date('2023-03'),
+            to: new Date('2023-08')
+        },
+        skills: getSkills('python', 'data-science', 'reactjs','nodejs','aws'), // Assuming 'data-science' encompasses 'data-analytics', and web dev skills are implied
+        type: 'Web Application'
+    }
+]
+items.sort((a, b) => b.period.from.getTime() - a.period.from.getTime());
 
 export const title = 'Projects';

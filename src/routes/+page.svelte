@@ -3,7 +3,7 @@
 	import Icon from '$lib/components/Icon/Icon.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
 	import { titleSuffix } from '@data/app';
-	import { links, description, lastName, name, title, skills } from '@data/home';
+	import { links, description, lastName, name, title, skills, subtitle, profileImage } from '@data/home';
 	import { items as skillsItems } from '@data/skills';
 	import { useTitle } from '$lib/utils/helpers';
 	import { isBlank } from '@riadh-adrani/utils';
@@ -15,6 +15,8 @@
 
 		return !isBlank(email) && reg.test(email);
 	};
+
+	// Add your profile image path // Adjust this path based on your image location
 </script>
 
 <svelte:head>
@@ -24,7 +26,15 @@
 	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-10px"
 >
 	<div class="md:flex-1 gap-10px">
+		<div class="flex justify-center md:justify-start mb-6">
+			<img 
+				src={profileImage} 
+				alt="Profile" 
+				class="w-32 h-32 rounded-full object-cover border-2 border-[var(--accent-text)]"
+			/>
+		</div>
 		<MainTitle classes="md:text-left ">{name} {lastName},</MainTitle>
+		<h4 class="text-[var(--secondary-text)] text-center md:text-left font-normal">{subtitle}</h4>
 		<p class="text-[var(--tertiary-text)]  text-center md:text-left text-[1.2em] font-extralight">
 			{description}
 		</p>
