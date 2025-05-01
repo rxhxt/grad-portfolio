@@ -1,10 +1,12 @@
 import { Platform } from '$lib/types';
 import { getSkills } from './skills';
+import { base } from '$app/paths';
 
 export const title = 'Home';
 
 export const name = 'Rohit';
-export const profileImage = '/logos/rohit-profile-pic.jpeg';
+
+export const profileImage = `${base}/logos/rohit-profile-pic.jpeg`;
 
 
 export const lastName = 'Nagotkar';
