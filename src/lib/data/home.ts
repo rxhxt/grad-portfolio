@@ -4,7 +4,7 @@ import { getSkills } from './skills';
 export const title = 'Home';
 
 export const name = 'Rohit';
-export const profileImage = './logos/rohit-profile-pic.jpeg';
+export const profileImage = '/logos/rohit-profile-pic.jpeg';
 
 
 export const lastName = 'Nagotkar';
