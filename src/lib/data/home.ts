@@ -10,8 +10,7 @@ export const profileImage = `${base}/logos/rohit-profile-pic.jpeg`;
 
 
 export const lastName = 'Nagotkar';
-export const subtitle = 'Masters in Computer Science | Data Science Enthusiast | Full Stack Developer';
-
+export const subtitle = 'Full‑Stack & GenAI Engineer – Deployed 4 web apps & doubled UX engagement | Python • Node • AWS • React | M.S. CS‑Data Science ’25 | Ex‑Lead SWE, crafting people‑centric products at scale'
 
 export const description =
 	'A passionate Full Stack Developer and Data Science Enthusiast pursuing a Master\'s in Computer Science with a specialization in Data Science at Seattle University. With expertise in Machine Learning, Data Science, and Web Development, I thrive on using technology to solve real-world problems. My goal is to create impactful solutions that drive innovation and positive change.'

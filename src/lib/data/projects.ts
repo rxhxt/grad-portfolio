@@ -152,6 +152,21 @@ export const items: Array<Project> = [
         },
         skills: getSkills('python', 'data-science', 'reactjs','nodejs','aws'), // Assuming 'data-science' encompasses 'data-analytics', and web dev skills are implied
         type: 'Web Application'
+    },
+    {
+        slug: 'rag-genai-pipeline',
+        color: '#FF6F00',
+        description: 'Formulated a retrieval-augmented GenAI pipeline using LangChain, Pinecone, and OpenAI, achieving a 35% increase in document-grounded response relevance across multi-turn user queries. Vectorized document data to optimize chunk-level embedding relevance, achieving a 30% drop in noise during context retrieval in multi-turn queries.',
+        shortDescription: 'Retrieval-augmented GenAI pipeline for multi-turn Q&A using LangChain and Pinecone',
+        links: [{to:"https://github.com/rxhxt/SU-Rag-Chat", label:"GitHub"}], // Add GitHub link if available
+        logo: Assets.Unknown,
+        name: 'Retrieval-Augmented GenAI Pipeline for Multi-Turn Q&A',
+        period: {
+            from: new Date('2024-09'), // Adjust dates as needed
+            to: new Date('2024-12')
+        },
+        skills: getSkills('python', 'ai', 'machine-learning'), // Using available skills that match LangChain, Pinecone, RAG
+        type: 'AI Application'
     }
 ]
 items.sort((a, b) => b.period.from.getTime() - a.period.from.getTime());

@@ -3,6 +3,21 @@ import { getSkills } from './skills';
 import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
+     {
+        slug: 'lead-machine-learning-engineer',
+        company: 'Halo AI',
+        description: 'Enabled intent-based automation by integrating large language models with function calling and custom prompt design, supporting 7 distinct user-intent actions through conversational interfaces. Integrated LLM-driven features into the product MVP and implemented usage tracking, leading to a 20% improvement in user engagement through data-informed experience enhancements. Architected an end-to-end OCR system for mobile screenshots to extract on-screen text and visual context, enabling layout-aware analysis and capturing structured data across 90% of core UI flows.',
+        contract: ContractType.Internship,
+        type: 'Machine Learning Engineering',
+        location: 'Unknown',
+        period: { from: new Date(2020, 3), to: new Date(2020, 5) },
+        skills: getSkills('python', 'machine-learning', 'data-science', 'ai', 'nlp', 'ocr'),
+        name: 'Lead Machine Learning Engineer',
+        color: '#673ab7',
+        links: [],
+        logo: Assets.Unknown,
+        shortDescription: 'Integrated LLMs with function calling, implemented usage tracking for 20% engagement improvement, and built OCR systems for mobile screenshots.'
+    },
     {
         slug: 'web-developer-assistant',
         company: 'Seattle University',
@@ -12,8 +27,8 @@ export const items: Array<Experience> = [
         location: 'Seattle, WA', // From the image
         period: { from: new Date(2024, 6), to: new Date(2025, 6) }, // June 2023 - June 2024 (inferred from 06/2023 - Present, assuming "Present" was June 2024 when the CV was last updated)
         skills: getSkills('html', 'css', 'javascript', 'nodejs'), // Basic web development skills implied
-        name: 'Web Developer Assistant',
-        color: '#007bff', // A generic blue for web development
+        name: 'Software Developer',
+        color:  '#00c853', // A generic blue for web development
         links: [],
         logo: Assets.Unknown,
         shortDescription: 'Maintained and developed Seattle University websites.'
