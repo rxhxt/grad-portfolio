@@ -10,7 +10,7 @@ export const items: Array<Experience> = [
         contract: ContractType.Internship,
         type: 'Machine Learning Engineering',
         location: 'Unknown',
-        period: { from: new Date(2020, 3), to: new Date(2020, 5) },
+        period: { from: new Date(2024, 1), to: new Date(2024, 8) },
         skills: getSkills('python', 'machine-learning', 'data-science', 'ai', 'nlp', 'ocr'),
         name: 'Lead Machine Learning Engineer',
         color: '#673ab7',
