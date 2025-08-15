@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from "../config";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const initialProjectsCount = 4;
 ---
 
 {
@@ -19,7 +20,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
           </div>
 
           <div class="lg:col-span-8">
-            <div class="space-y-8">
+            <div class="space-y-8" id="projects-container">
               {siteConfig.projects.map((project, index) => {
                 const Component = project.link ? "a" : "div";
                 const linkProps = project.link
@@ -30,8 +31,10 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                     }
                   : {};
 
+                const isHidden = index >= initialProjectsCount;
+
                 return (
-                  <div class="group relative">
+                  <div class={`group relative project-item ${isHidden ? 'hidden-project' : ''}`}>
                     <Component
                       {...linkProps}
                       class={`block relative p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 transition-all duration-300 ${
@@ -96,9 +99,92 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                 );
               })}
             </div>
+            
+            {siteConfig.projects.length > initialProjectsCount && (
+              <div class="flex justify-center mt-8">
+                <button
+                  id="show-more-btn"
+                  class="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                >
+                  Show More Projects ({siteConfig.projects.length - initialProjectsCount} more)
+                </button>
+                <button
+                  id="show-less-btn"
+                  class="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hidden"
+                >
+                  Show Less
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </section>
   )
 }
+
+<style>
+  .hidden-project {
+    display: none;
+  }
+  
+  .show-project {
+    display: block;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const showLessBtn = document.getElementById('show-less-btn');
+    const hiddenProjects = document.querySelectorAll('.hidden-project');
+    
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener('click', function() {
+        hiddenProjects.forEach((project, index) => {
+          setTimeout(() => {
+            project.classList.remove('hidden-project');
+            project.classList.add('show-project');
+          }, index * 100);
+        });
+        
+        showMoreBtn.classList.add('hidden');
+        if (showLessBtn) {
+          showLessBtn.classList.remove('hidden');
+        }
+      });
+    }
+    
+    if (showLessBtn) {
+      showLessBtn.addEventListener('click', function() {
+        hiddenProjects.forEach(project => {
+          project.classList.add('hidden-project');
+          project.classList.remove('show-project');
+        });
+        
+        showLessBtn.classList.add('hidden');
+        if (showMoreBtn) {
+          showMoreBtn.classList.remove('hidden');
+        }
+        
+        // Scroll to projects section
+        document.getElementById('projects')?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    }
+  });
+</script>
