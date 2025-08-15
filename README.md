@@ -1,122 +1,115 @@
-# Slick Portfolio With Svelte.
+# Rohit Nagotkar - Portfolio
 
-Vercel-like style portfolio template for developers.
+A modern, minimalist portfolio website built with Astro and Tailwind CSS. Showcasing my skills, experience, and projects in a clean, professional way.
 
-### [Checkout Svelte 5 version is here](https://github.com/RiadhAdrani/slick-portfolio-svelte-5)
+## About Me
 
-## Create
+I'm a passionate Full Stack Developer and Data Science Enthusiast pursuing a Master's in Computer Science with a specialization in Data Science at Seattle University. With expertise in Machine Learning, Data Science, and Web Development, I thrive on using technology to solve real-world problems.
 
-You can either clone or fork this repository :
+## Built With
 
-### `fork`
+- **[Astro](https://astro.build/)** - Static site generator for modern web apps
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Tabler Icons](https://tabler.io/icons)** - Free and open source icons
+- **TypeScript** - For type-safe configuration
 
-You can fork the project, maintaining a link to the original repo using the `fork` button, make sure the check the `Copy the master branch only` checkbox.
+## Project Structure
 
-![alt text](./screenshots/image.png)
+```
+rohit-portfolio/
+├── public/
+│   └── favicon.svg          # Site favicon
+├── src/
+│   ├── components/          # Astro components
+│   │   ├── About.astro      # About section
+│   │   ├── Education.astro  # Education section
+│   │   ├── Experience.astro # Work experience section
+│   │   ├── Footer.astro     # Site footer
+│   │   ├── Header.astro     # Navigation header
+│   │   ├── Hero.astro       # Hero/intro section
+│   │   └── Projects.astro   # Projects showcase
+│   ├── pages/
+│   │   └── index.astro      # Main page layout
+│   ├── styles/
+│   │   └── global.css       # Global styles
+│   └── config.ts            # Site configuration
+├── astro.config.mjs         # Astro configuration
+├── package.json             # Project dependencies
+├── tsconfig.json            # TypeScript configuration
+└── rules.md                 # Development guidelines
+```
 
-### `clone`
+## Local Development
 
-- using `git` :
+To run the project locally:
 
 ```bash
-# ssh
-git clone git@github.com:RiadhAdrani/slick-portfolio-svelte.git protfolio
+# Install dependencies
+npm install
 
-# https
-git clone https://github.com/RiadhAdrani/slick-portfolio-svelte.git protfolio
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-- using `degit` npm executable :
+## Configuration
 
-```bash
-npx degit RiadhAdrani/slick-portfolio-svelte portfolio
-```
+The portfolio is easily customizable through the `src/config.ts` file, which controls:
 
-if you don't have `degit`, it will prompt you to accept, enter `y`.
+- **Personal Information**: Name, title, description
+- **Accent Color**: Primary color theme (changes site-wide)
+- **Social Links**: Email, LinkedIn, Twitter, GitHub (all optional)
+- **About Section**: Personal bio/description
+- **Skills**: List of technical skills
+- **Projects**: Project showcase with descriptions and links
+- **Experience**: Work history with bullet points
+- **Education**: Educational background and achievements
 
-> You can add the main repo as another remote repo to maintain updates in the future.
->
-> ```bash
-> # ssh
-> git remote add main git@github.com:RiadhAdrani/slick-portfolio-svelte.git
-> ```
+## Features
 
-## Deploy to GitHub pages
+- 📱 Fully responsive design
+- 🎨 Modern, minimalist aesthetic
+- ⚡ Fast loading with Astro
+- 🔧 Easy customization through single config file
+- 🎯 SEO optimized
+- 🌙 Clean animations and transitions
+- 📊 Project showcase with technology tags
+- 💼 Professional experience timeline
+- 🎓 Education section
 
-Before deploying to `GitHub Pages`:
+## Technologies & Skills Showcased
 
-### Enable workflows for `Forks`
+- **Languages**: Python, JavaScript, TypeScript, HTML, CSS
+- **Frameworks**: React, Node.js, Flask
+- **Cloud & DevOps**: AWS, Docker
+- **Databases**: MongoDB, PostgreSQL, Elasticsearch
+- **Data Science**: Machine Learning, AI, Computer Vision, Tableau
+- **Other**: Bootstrap, LLM, Artificial Intelligence
 
-If you forked the repo, go to the `Actions` tab in the newly generated repository, and enable workflows, click on the green button `I understand my workflows, go ahead and enable them` :
+## Deployment
 
-![alt text](./screenshots/enable-fork-workflow.png)
+The site can be deployed to any static hosting service:
 
-### Actions Settings
+- [Netlify](https://docs.astro.build/en/guides/deploy/netlify/)
+- [Vercel](https://docs.astro.build/en/guides/deploy/vercel/)
+- [GitHub Pages](https://docs.astro.build/en/guides/deploy/github/)
+- [Cloudflare Pages](https://docs.astro.build/en/guides/deploy/cloudflare/)
 
-Allow `GitHub Pages` in your repo settings with correct permissions:
-  - go to your repo `Settings` > `Actions` > `General`
-  - in `Actions permissions` : make sure that `Allow all actions and reusable workflows` checkbox is checked
+## Contact
 
-![alt text](./screenshots/settings-actions.png)
+- **Email**: rohitajaynagotkar@gmail.com
+- **LinkedIn**: [linkedin.com/in/rohit-nagotkar](https://linkedin.com/in/rohit-nagotkar)
+- **GitHub**: [github.com/rxhxt](https://github.com/rxhxt)
 
-### svelte.config.js
+## License
 
-Depending on the name of your repository, you would like to set the `base` variable to that, starting with a leading slash like this:
+This project is open source and available under the [MIT License](LICENSE).
 
-```js
-const base = '/slick-portfolio-svelte';
-```
+---
 
-But if your repository name is the same as your Github domain name; my Github name is `RiadhAdrani` so my domain name is `riadhadrani.github.io` (lower cased), and so the special repository name is also `riadhadrani.github.io`: if that is the case, you need to set the base to an empty string
-
-```js
-const base = '';
-
-```
-
-### Launching the build and deploy workflow
-
-If you didn't commit and push the changes in the `svelte.config.js` yet, you can do that now, otherwise you can create an empty commit:
-
-```bash
-git commit --allow-empty -m "chore: trigger workflow"
-```
-
-and push it to your `master` or `main` branch.
-
-In the `Actions` tab, make sure that the `Build and Deploy` workflow is successful (wait for it to complete): you should have at least one successfull workflow run:
-
-![alt text](./screenshots/build-and-deploy-action.png)
-
-### Enable GitHub pages
-
-
-- go to your repo's `Settings` > `Pages`
-- in Source section, select `Deploy from a branch`.
-- in Branch section, select `gh-pages` and `/ (root)` and click on save
-
-![alt text](./screenshots/enable-gh-pages.png)
-
-Again in the `Actions` tab, make sure that the `pages-build-deployment` workflow is successful (wait for it to complete): you should have at least one successfull workflow run:
-
-![alt text](./screenshots/pages-build-deployment-action.png)
-
-> If for some reason no action was launched, try pushing empty commit.
-
-## That's it
-
-That's it, you can click on the latest deployment and visit it.
-
-## Adapt to your needs
-
-If you want to use the template as it is, you can :
-
-- update files in `src/lib/data` with your data.
-- update `src/lib/index.scss` for custom styling.
-- update `static/favicon.ico` to customize the tab's icon.
-
-But feel free to explore and hack the template to your needs if you feel like it.
-
-## Known issues:
-
-- Svelte no longer support `node 14`, use a newer version instead.
+Built with ❤️ by Rohit Nagotkar
