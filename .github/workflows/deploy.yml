@@ -22,11 +22,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
 
       - name: Install and Build 🔧
         run: |
-          npm ci
+          npm install --no-optional
+          npm install
           npm run build
           touch dist/.nojekyll
 
