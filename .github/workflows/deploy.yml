@@ -26,7 +26,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          npm clean-install --force
+          npm install --legacy-peer-deps
           npm run build
           touch dist/.nojekyll
 
