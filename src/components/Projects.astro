@@ -34,17 +34,16 @@ const initialProjectsCount = 4;
                 const isHidden = index >= initialProjectsCount;
 
                 return (
-                  <div class={`group relative project-item ${isHidden ? 'hidden-project' : ''}`}>
+                  <div class={`group relative project-item card-hover ${isHidden ? 'hidden-project' : ''}`}>
                     <Component
                       {...linkProps}
-                      class={`block relative p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 transition-all duration-300 ${
-                        project.link
-                          ? "hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1"
-                          : ""
-                      }`}
+                      class="block relative p-4 sm:p-6 md:p-8 bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 overflow-hidden"
                     >
                       {project.link && (
-                        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-gray-900 rounded-full text-white transition-all duration-300 group-hover:bg-gray-700">
+                        <div 
+                          class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white transition-all duration-300"
+                          style={`background-color: ${siteConfig.accentColor}`}
+                        >
                           <svg
                             class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                             fill="none"
@@ -64,18 +63,18 @@ const initialProjectsCount = 4;
                       <div class="space-y-4">
                         <div>
                           <span
-                            class="text-sm font-mono"
-                            style={{ color: siteConfig.accentColor }}
+                            class="text-sm font-mono font-semibold"
+                            style={`color: ${siteConfig.accentColor}`}
                           >
                             0{index + 1}
                           </span>
-                          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1">
+                          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1 group-hover:text-gray-800 transition-colors duration-300">
                             {project.name}
                           </h3>
                         </div>
 
                         <p
-                          class={`text-base sm:text-lg text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
+                          class={`text-base sm:text-lg text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
                         >
                           {project.description}
                         </p>
@@ -84,9 +83,7 @@ const initialProjectsCount = 4;
                           <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
                             {project.skills.map((skill) => (
                               <span
-                                class={`px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
-                                  project.link ? "group-hover:bg-gray-800" : ""
-                                }`}
+                                class="skill-badge px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300"
                               >
                                 {skill}
                               </span>
@@ -104,13 +101,15 @@ const initialProjectsCount = 4;
               <div class="flex justify-center mt-8">
                 <button
                   id="show-more-btn"
-                  class="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  class="btn-primary px-6 py-3 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2"
+                  style={`focus:ring-color: ${siteConfig.accentColor}`}
                 >
                   Show More Projects ({siteConfig.projects.length - initialProjectsCount} more)
                 </button>
                 <button
                   id="show-less-btn"
-                  class="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hidden"
+                  class="btn-primary px-6 py-3 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 hidden"
+                  style={`focus:ring-color: ${siteConfig.accentColor}`}
                 >
                   Show Less
                 </button>
