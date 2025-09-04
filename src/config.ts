@@ -120,8 +120,8 @@ workAuthorization: "Open to full-time roles in 2025",
   experience: [
     {
       company: "Halo AI",
-      title: "Machine Learning Engineer",
-      dateRange: "Feb 2024 – Sep 2024",
+      title: "AI Engineer",
+      dateRange: "Jan 2024 – Aug 2024",
       bullets: [
         "Integrated LLMs with function calling to enable 7 intent-based actions via conversational UI.",
         "Shipped LLM features and usage tracking, informing UX changes that drove ~20% engagement lift.",
