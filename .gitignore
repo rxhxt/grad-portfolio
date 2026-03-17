@@ -1,11 +1,38 @@
-.DS_Store
+# dependencies
 node_modules
+/.pnp
+.pnp.*
+__pnp.*
+
+# next.js
+/.next/
+/out/
+
+# production
 /build
-/.svelte-kit
-/package
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
 .env
 .env.*
 !.env.example
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
 /.vscode
+/.idea
