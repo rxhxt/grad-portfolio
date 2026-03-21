@@ -1,4 +1,13 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { siteConfig } from "@/config";
+
+const socialIconHover = {
+  scale: 1.15,
+  rotate: 5,
+  transition: { type: "spring", stiffness: 400, damping: 15 },
+};
 
 export function Footer() {
   const hasExperience = siteConfig.experience.length > 0;
@@ -18,45 +27,48 @@ export function Footer() {
             </p>
             <div className="flex gap-x-6">
               {siteConfig.social?.email && (
-                <a
+                <motion.a
                   href={`mailto:${siteConfig.social.email}`}
                   aria-label="Email"
                   className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
                   style={{ ["--accent-color" as string]: siteConfig.accentColor }}
+                  whileHover={socialIconHover}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
                     <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
                     <path d="M3 7l9 6l9 -6" />
                   </svg>
-                </a>
+                </motion.a>
               )}
               {siteConfig.social?.linkedin && (
-                <a
+                <motion.a
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
                   style={{ ["--accent-color" as string]: siteConfig.accentColor }}
+                  whileHover={socialIconHover}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
                     <path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
                   </svg>
-                </a>
+                </motion.a>
               )}
               {siteConfig.social?.github && (
-                <a
+                <motion.a
                   href={siteConfig.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                   className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
                   style={{ ["--accent-color" as string]: siteConfig.accentColor }}
+                  whileHover={socialIconHover}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
                     <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
                   </svg>
-                </a>
+                </motion.a>
               )}
             </div>
           </div>

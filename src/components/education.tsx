@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config";
 import { SectionWrapper } from "./section-wrapper";
+import BlurText from "./reactbits/BlurText";
 
 export function Education() {
   if (siteConfig.education.length === 0) return null;
@@ -11,9 +12,13 @@ export function Education() {
     <SectionWrapper id="education" className="p-8 sm:p-12 md:p-16 lg:p-24">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         <div className="lg:col-span-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900 dark:text-gray-100">
-            Education
-          </h2>
+          <BlurText
+            text="Education"
+            className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900 dark:text-gray-100"
+            delay={100}
+            animateBy="words"
+            direction="bottom"
+          />
           <div
             className="w-[75px] h-[5px] mt-2 rounded-full"
             style={{ backgroundColor: siteConfig.accentColor }}
@@ -29,7 +34,7 @@ export function Education() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="card-hover bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 p-4 sm:p-5 md:p-6 relative overflow-hidden"
+                className="card-hover tilt-card bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 p-4 sm:p-5 md:p-6 relative overflow-hidden"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
                   <div>
