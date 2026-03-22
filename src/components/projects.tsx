@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config";
 import { SectionWrapper } from "./section-wrapper";
+import BlurText from "./reactbits/BlurText";
+import StarBorder from "./reactbits/StarBorder";
 
 const INITIAL_COUNT = 4;
 
@@ -21,9 +23,13 @@ export function Projects() {
     <SectionWrapper id="projects" className="p-8 sm:p-12 md:p-16 lg:p-24">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         <div className="lg:col-span-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900 dark:text-gray-100">
-            Projects
-          </h2>
+          <BlurText
+            text="Projects"
+            className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900 dark:text-gray-100"
+            delay={100}
+            animateBy="words"
+            direction="bottom"
+          />
           <div
             className="w-[75px] h-[5px] mt-2 rounded-full"
             style={{ backgroundColor: siteConfig.accentColor }}
@@ -55,7 +61,7 @@ export function Projects() {
                   >
                     <Wrapper
                       {...linkProps}
-                      className="block relative p-4 sm:p-6 md:p-8 bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300 overflow-hidden"
+                      className="block relative p-4 sm:p-6 md:p-8 bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300 overflow-hidden hover-glow"
                     >
                       {hasLink && (
                         <div
@@ -121,7 +127,11 @@ export function Projects() {
 
           {hiddenCount > 0 && (
             <div className="flex justify-center mt-8">
-              <button
+              <StarBorder
+                as="button"
+                color={siteConfig.accentColor}
+                speed="5s"
+                className="cursor-pointer"
                 onClick={() => {
                   if (showAll) {
                     setShowAll(false);
@@ -132,12 +142,13 @@ export function Projects() {
                     setShowAll(true);
                   }
                 }}
-                className="btn-primary px-6 py-3 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
-                {showAll
-                  ? "Show Less"
-                  : `Show More Projects (${hiddenCount} more)`}
-              </button>
+                <span className="font-medium">
+                  {showAll
+                    ? "Show Less"
+                    : `Show More Projects (${hiddenCount} more)`}
+                </span>
+              </StarBorder>
             </div>
           )}
         </div>

@@ -3,15 +3,28 @@
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config";
 import { SectionWrapper } from "./section-wrapper";
+import BlurText from "./reactbits/BlurText";
+import CountUp from "./reactbits/CountUp";
+import dynamic from "next/dynamic";
+
+const ScrollReveal = dynamic(() => import("./reactbits/ScrollReveal"), { ssr: false });
+const ScrollVelocity = dynamic(
+  () => import("./reactbits/ScrollVelocity").then(mod => ({ default: mod.ScrollVelocity })),
+  { ssr: false }
+);
 
 export function About() {
   return (
     <SectionWrapper id="about" className="p-8 sm:p-12 md:p-16 lg:p-24">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         <div className="lg:col-span-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900 dark:text-gray-100">
-            About Me
-          </h2>
+          <BlurText
+            text="About Me"
+            className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900 dark:text-gray-100"
+            delay={100}
+            animateBy="words"
+            direction="bottom"
+          />
           <div
             className="w-[75px] h-[5px] mt-2 rounded-full"
             style={{ backgroundColor: siteConfig.accentColor }}
@@ -19,9 +32,40 @@ export function About() {
         </div>
 
         <div className="lg:col-span-8 space-y-8">
-          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600 dark:text-gray-400">
+          <ScrollReveal
+            enableBlur={true}
+            baseOpacity={0.15}
+            baseRotation={2}
+            blurStrength={3}
+            textClassName="!text-lg sm:!text-xl md:!text-2xl !leading-relaxed !font-medium text-gray-600 dark:text-gray-400"
+            containerClassName="!my-0"
+          >
             {siteConfig.aboutMe}
-          </p>
+          </ScrollReveal>
+
+          {/* Stats row with CountUp */}
+          <div className="grid grid-cols-3 gap-4 pt-4">
+            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color: siteConfig.accentColor }}>
+                <CountUp to={4} duration={2} className="" />
+                <span>+</span>
+              </div>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Deployed Apps</p>
+            </div>
+            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color: siteConfig.accentColor }}>
+                <CountUp to={20} duration={2} className="" />
+                <span>%+</span>
+              </div>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">UX Lift</p>
+            </div>
+            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color: siteConfig.accentColor }}>
+                <CountUp to={3.92} from={0} duration={2.5} className="" />
+              </div>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">GPA</p>
+            </div>
+          </div>
 
           <div className="pt-4">
             <div className="flex flex-wrap gap-3">
@@ -40,6 +84,18 @@ export function About() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scrolling skill marquee */}
+      <div className="mt-16 -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 opacity-20 dark:opacity-15">
+        <ScrollVelocity
+          texts={[
+            siteConfig.skills.slice(0, 10).join(" • "),
+            siteConfig.skills.slice(10).join(" • "),
+          ]}
+          velocity={30}
+          className="text-gray-400 dark:text-gray-600"
+        />
       </div>
     </SectionWrapper>
   );

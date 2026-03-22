@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config";
+import BlurText from "./reactbits/BlurText";
+import RotatingText from "./reactbits/RotatingText";
+import dynamic from "next/dynamic";
+
+const Threads = dynamic(() => import("./reactbits/Threads"), { ssr: false });
 
 export function Hero() {
   return (
@@ -24,45 +29,15 @@ export function Hero() {
         }}
       />
 
-      {/* SVG grid + programming symbols */}
-      <svg
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 size-full stroke-gray-200 dark:stroke-gray-800 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-      >
-        <defs>
-          <pattern
-            x="50%"
-            y={-1}
-            id="grid-pattern"
-            width={200}
-            height={200}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-          <pattern
-            id="programming-symbols"
-            x="0"
-            y="0"
-            width="400"
-            height="400"
-            patternUnits="userSpaceOnUse"
-          >
-            <text x="50" y="50" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="24" transform="rotate(-15)">{"</>"}</text>
-            <text x="150" y="100" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="20" transform="rotate(10)">{"{}"}</text>
-            <text x="250" y="80" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="18" transform="rotate(-5)">{"=>"}</text>
-            <text x="100" y="200" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="22" transform="rotate(15)">{"[]"}</text>
-            <text x="300" y="180" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="20" transform="rotate(-10)">{"<>"}</text>
-            <text x="200" y="250" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="24" transform="rotate(5)">{"()"}</text>
-            <text x="50" y="320" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="18" transform="rotate(-8)">{"::"}</text>
-            <text x="350" y="300" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="22" transform="rotate(12)">{"=="}</text>
-            <text x="150" y="350" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="20" transform="rotate(-15)">{"++"}</text>
-            <text x="250" y="370" fill={siteConfig.accentColor} fontFamily="monospace" fontSize="24" transform="rotate(8)">{";"}</text>
-          </pattern>
-        </defs>
-        <rect fill="url(#programming-symbols)" width="100%" height="100%" opacity="0.2" />
-        <rect fill="url(#grid-pattern)" width="100%" height="100%" strokeWidth={0} />
-      </svg>
+      {/* Animated Threads background */}
+      <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-20">
+        <Threads
+          color={[0.114, 0.306, 0.847]}
+          amplitude={1.2}
+          distance={0.3}
+          enableMouseInteraction={true}
+        />
+      </div>
 
       {/* Content */}
       <div className="flex-1 mx-auto p-8 sm:p-12 md:p-24 flex items-center">
@@ -75,25 +50,39 @@ export function Hero() {
           >
             Hello! 👋
           </motion.h2>
-          <motion.h1
+          <div className="mt-6 sm:mt-8 md:mt-10">
+            <BlurText
+              text={`I'm ${siteConfig.name}`}
+              className="text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 dark:text-gray-100"
+              delay={100}
+              animateBy="words"
+              direction="bottom"
+              stepDuration={0.4}
+            />
+          </div>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 dark:text-gray-100"
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="mt-4 sm:mt-6 md:mt-8 flex flex-wrap items-center gap-x-2 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 dark:text-gray-400"
           >
-            I&apos;m{" "}
-            <span style={{ color: siteConfig.accentColor }}>
-              {siteConfig.name}
-            </span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 dark:text-gray-400"
-          >
-            {siteConfig.title}
-          </motion.p>
+            <span>I&apos;m a</span>
+            <RotatingText
+              texts={[
+                "Full-Stack Engineer",
+                "GenAI Engineer",
+                "ML Engineer",
+                "Data Scientist",
+              ]}
+              mainClassName="overflow-hidden inline-flex"
+              staggerFrom="last"
+              staggerDuration={0.025}
+              rotationInterval={2500}
+              transition={{ type: "spring", damping: 30, stiffness: 200 }}
+              elementLevelClassName="font-semibold"
+              style={{ color: siteConfig.accentColor }}
+            />
+          </motion.div>
         </div>
       </div>
 
@@ -101,7 +90,7 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
         className="p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 dark:text-gray-400"
       >
         {siteConfig.social?.email && (
