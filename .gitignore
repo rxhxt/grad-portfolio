@@ -36,3 +36,7 @@ next-env.d.ts
 # IDE
 /.vscode
 /.idea
+
+# AutoCode
+.autocode/
+autocode.manifest.json
