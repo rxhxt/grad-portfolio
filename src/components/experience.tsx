@@ -36,7 +36,7 @@ export function Experience() {
         <div className="lg:col-span-8">
           <div className="relative" ref={timelineRef}>
             {/* Animated timeline line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gray-200 dark:bg-gray-800 z-0">
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gray-200 dark:bg-gray-800/60 z-0">
               <motion.div
                 className="w-full rounded-full"
                 style={{
@@ -61,6 +61,7 @@ export function Experience() {
                   style={{
                     borderColor: siteConfig.accentColor,
                     backgroundColor: siteConfig.accentColor,
+                    boxShadow: `0 0 12px ${siteConfig.accentColor}`,
                   }}
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
@@ -69,10 +70,10 @@ export function Experience() {
                 />
 
                 {/* Card with tilt hover */}
-                <div className="card-hover tilt-card bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 p-4 sm:p-5 md:p-6 relative overflow-hidden">
+                <div className="card-hover tilt-card bg-white dark:bg-gray-900/60 dark:backdrop-blur rounded-lg shadow-sm border border-gray-200 dark:border-white/10 dark:ring-1 dark:ring-inset dark:ring-white/5 p-4 sm:p-5 md:p-6 relative overflow-hidden">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
-                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100">
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
                         {exp.title}
                       </h3>
                       <p
@@ -82,7 +83,7 @@ export function Experience() {
                         {exp.company}
                       </p>
                     </div>
-                    <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mt-2 sm:mt-0 font-medium">
+                    <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2 sm:mt-0 font-medium">
                       {exp.dateRange}
                     </span>
                   </div>
@@ -94,7 +95,7 @@ export function Experience() {
                           className="inline-block w-1.5 h-1.5 rounded-full mt-2 mr-3 shrink-0"
                           style={{ backgroundColor: siteConfig.accentColor }}
                         />
-                        <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                           {bullet}
                         </span>
                       </li>

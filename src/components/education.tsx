@@ -34,11 +34,11 @@ export function Education() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="card-hover tilt-card bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 p-4 sm:p-5 md:p-6 relative overflow-hidden"
+                className="card-hover tilt-card bg-white dark:bg-gray-900/60 dark:backdrop-blur rounded-lg shadow-sm border border-gray-200 dark:border-white/10 dark:ring-1 dark:ring-inset dark:ring-white/5 p-4 sm:p-5 md:p-6 relative overflow-hidden"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
                       {edu.degree}
                     </h3>
                     <p
@@ -48,7 +48,7 @@ export function Education() {
                       {edu.school}
                     </p>
                   </div>
-                  <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mt-2 sm:mt-0 font-medium">
+                  <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2 sm:mt-0 font-medium">
                     {edu.dateRange}
                   </span>
                 </div>
@@ -60,7 +60,7 @@ export function Education() {
                         className="inline-block w-1.5 h-1.5 rounded-full mt-2 mr-3 shrink-0"
                         style={{ backgroundColor: siteConfig.accentColor }}
                       />
-                      <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                      <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                         {achievement}
                       </span>
                     </li>
