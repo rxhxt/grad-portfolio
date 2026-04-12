@@ -45,25 +45,25 @@ export function About() {
 
           {/* Stats row with CountUp */}
           <div className="grid grid-cols-3 gap-4 pt-4">
-            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900/60 dark:backdrop-blur border border-gray-200 dark:border-white/10 dark:ring-1 dark:ring-inset dark:ring-white/5 transition-all duration-300 hover:-translate-y-0.5 dark:hover:shadow-[0_0_24px_-6px_var(--accent-color)]">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color: siteConfig.accentColor }}>
                 <CountUp to={4} duration={2} className="" />
                 <span>+</span>
               </div>
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Deployed Apps</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-300 mt-1">Deployed Apps</p>
             </div>
-            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900/60 dark:backdrop-blur border border-gray-200 dark:border-white/10 dark:ring-1 dark:ring-inset dark:ring-white/5 transition-all duration-300 hover:-translate-y-0.5 dark:hover:shadow-[0_0_24px_-6px_var(--accent-color)]">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color: siteConfig.accentColor }}>
                 <CountUp to={20} duration={2} className="" />
                 <span>%+</span>
               </div>
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">UX Lift</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-300 mt-1">UX Lift</p>
             </div>
-            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+            <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-900/60 dark:backdrop-blur border border-gray-200 dark:border-white/10 dark:ring-1 dark:ring-inset dark:ring-white/5 transition-all duration-300 hover:-translate-y-0.5 dark:hover:shadow-[0_0_24px_-6px_var(--accent-color)]">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color: siteConfig.accentColor }}>
                 <CountUp to={3.92} from={0} duration={2.5} className="" />
               </div>
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">GPA</p>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-300 mt-1">GPA</p>
             </div>
           </div>
 
@@ -87,14 +87,14 @@ export function About() {
       </div>
 
       {/* Scrolling skill marquee */}
-      <div className="mt-16 -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 opacity-20 dark:opacity-15">
+      <div className="mt-16 -mx-8 sm:-mx-12 md:-mx-16 lg:-mx-24 opacity-20 dark:opacity-30">
         <ScrollVelocity
           texts={[
             siteConfig.skills.slice(0, 10).join(" • "),
             siteConfig.skills.slice(10).join(" • "),
           ]}
           velocity={30}
-          className="text-gray-400 dark:text-gray-600"
+          className="text-gray-400 dark:text-gray-500"
         />
       </div>
     </SectionWrapper>
