@@ -15,11 +15,11 @@ export function Footer() {
   const hasEducation = siteConfig.education.length > 0;
 
   return (
-    <footer className="relative bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer className="relative bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-white/10">
       <div className="mx-auto max-w-6xl px-6 py-12 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div className="flex flex-col gap-4">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
               {siteConfig.name}
             </h3>
             <p className="text-base text-gray-600 dark:text-gray-400 max-w-md">
@@ -30,7 +30,7 @@ export function Footer() {
                 <motion.a
                   href={`mailto:${siteConfig.social.email}`}
                   aria-label="Email"
-                  className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
+                  className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-950 rounded"
                   style={{ ["--accent-color" as string]: siteConfig.accentColor }}
                   whileHover={socialIconHover}
                 >
@@ -46,7 +46,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
+                  className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-950 rounded"
                   style={{ ["--accent-color" as string]: siteConfig.accentColor }}
                   whileHover={socialIconHover}
                 >
@@ -61,7 +61,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
+                  className="text-gray-600 dark:text-gray-400 transition-colors duration-300 hover:text-[var(--accent-color)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-950 rounded"
                   style={{ ["--accent-color" as string]: siteConfig.accentColor }}
                   whileHover={socialIconHover}
                 >
@@ -94,7 +94,7 @@ export function Footer() {
                 </a>
               )}
             </nav>
-            <p className="text-sm text-gray-500 dark:text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
             </p>
           </div>
@@ -103,9 +103,9 @@ export function Footer() {
 
       {/* Decorative pattern */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <svg aria-hidden="true" className="absolute bottom-0 left-0 w-full h-24 text-gray-100 dark:text-gray-800">
+        <svg aria-hidden="true" className="absolute bottom-0 left-0 w-full h-24 text-gray-100 dark:text-gray-700">
           <pattern id="footer-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-            <path d="M0 50 Q 25 40, 50 50 T 100 50" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.4" />
+            <path d="M0 50 Q 25 40, 50 50 T 100 50" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.6" />
           </pattern>
           <rect width="100%" height="100%" fill="url(#footer-pattern)" />
         </svg>
