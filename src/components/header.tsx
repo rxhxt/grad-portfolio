@@ -41,7 +41,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm"
+          ? "bg-white/80 dark:bg-gray-950/70 backdrop-blur-md dark:backdrop-blur-xl shadow-sm border-b border-transparent dark:border-white/5"
           : "bg-transparent"
       }`}
     >
@@ -52,7 +52,7 @@ export function Header() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-gray-700 dark:text-gray-300 font-medium transition-all duration-200 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
+                className="text-gray-700 dark:text-gray-300 font-medium transition-all duration-200 hover:text-[var(--accent-color)] dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] rounded"
               >
                 {link.label}
               </a>
@@ -70,7 +70,7 @@ export function Header() {
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+            className="w-11 h-11 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900/60 dark:backdrop-blur text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)]"
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
@@ -97,7 +97,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden bg-white/95 dark:bg-gray-950/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800"
+            className="md:hidden overflow-hidden bg-white/95 dark:bg-gray-950/95 backdrop-blur-md border-t border-gray-200 dark:border-white/10"
           >
             <ul className="px-6 py-4 space-y-3">
               {navLinks.map((link) => (
@@ -105,7 +105,7 @@ export function Header() {
                   <a
                     href={link.href}
                     onClick={handleNavClick}
-                    className="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400 transition-colors"
+                    className="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-[var(--accent-color)] dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] rounded"
                   >
                     {link.label}
                   </a>
