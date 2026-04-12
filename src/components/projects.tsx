@@ -61,11 +61,11 @@ export function Projects() {
                   >
                     <Wrapper
                       {...linkProps}
-                      className="block relative p-4 sm:p-6 md:p-8 bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300 overflow-hidden hover-glow"
+                      className="block relative p-4 sm:p-6 md:p-8 bg-white dark:bg-gray-900/70 dark:backdrop-blur rounded-xl sm:rounded-2xl border border-gray-200 dark:border-white/10 dark:ring-1 dark:ring-inset dark:ring-white/5 shadow-sm transition-all duration-300 overflow-hidden hover-glow dark:hover:shadow-[0_0_40px_-5px_var(--accent-color)]"
                     >
                       {hasLink && (
                         <div
-                          className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white transition-all duration-300"
+                          className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white ring-1 ring-white/20 transition-all duration-300"
                           style={{ backgroundColor: siteConfig.accentColor }}
                         >
                           <svg
@@ -87,7 +87,7 @@ export function Projects() {
                       <div className="space-y-4">
                         <div>
                           <span
-                            className="text-sm font-mono font-semibold"
+                            className="text-sm font-mono font-semibold dark:drop-shadow-[0_0_8px_var(--accent-color)]"
                             style={{ color: siteConfig.accentColor }}
                           >
                             {String(index + 1).padStart(2, "0")}
@@ -98,7 +98,7 @@ export function Projects() {
                         </div>
 
                         <p
-                          className={`text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300 ${
+                          className={`text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300 ${
                             hasLink ? "pr-12 sm:pr-14 md:pr-16" : ""
                           }`}
                         >
