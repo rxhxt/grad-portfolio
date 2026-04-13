@@ -25,12 +25,12 @@ export function Hero() {
       <div
         className="absolute inset-0 -z-10 hidden dark:block"
         style={{
-          background: `radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}30 0%, ${siteConfig.accentColor}15 20%, ${siteConfig.accentColor}08 40%, rgba(3, 7, 18, 0.3) 70%, rgba(3, 7, 18, 0.8) 90%, rgb(3, 7, 18) 100%)`,
+          background: `radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}45 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}12 40%, rgba(3, 7, 18, 0.3) 70%, rgba(3, 7, 18, 0.8) 90%, rgb(3, 7, 18) 100%)`,
         }}
       />
 
       {/* Animated Threads background */}
-      <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-20">
+      <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-[0.35]">
         <Threads
           color={[0.114, 0.306, 0.847]}
           amplitude={1.2}
@@ -46,14 +46,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 dark:text-gray-300"
+            className="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 dark:text-gray-200"
           >
             Hello! 👋
           </motion.h2>
           <div className="mt-6 sm:mt-8 md:mt-10">
             <BlurText
               text={`I'm ${siteConfig.name}`}
-              className="text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 dark:text-gray-100"
+              className="text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 dark:text-white"
               delay={100}
               animateBy="words"
               direction="bottom"
@@ -64,7 +64,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            className="mt-4 sm:mt-6 md:mt-8 flex flex-wrap items-center gap-x-2 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 dark:text-gray-400"
+            className="mt-4 sm:mt-6 md:mt-8 flex flex-wrap items-center gap-x-2 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 dark:text-gray-300"
           >
             <span>I&apos;m a</span>
             <RotatingText
@@ -97,7 +97,7 @@ export function Hero() {
           <a
             href={`mailto:${siteConfig.social.email}`}
             aria-label="Email"
-            className="transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
+            className="transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-[var(--accent-secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] rounded"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8">
               <path strokeOpacity="0" d="M0 0h24v24H0z" fill="none" />
@@ -112,7 +112,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
+            className="transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-[var(--accent-secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] rounded"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8">
               <path strokeOpacity="0" d="M0 0h24v24H0z" fill="none" />
@@ -130,7 +130,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-blue-400"
+            className="transition-colors duration-300 hover:text-[var(--accent-color)] dark:hover:text-[var(--accent-secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] rounded"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8">
               <path strokeOpacity="0" d="M0 0h24v24H0z" fill="none" />
